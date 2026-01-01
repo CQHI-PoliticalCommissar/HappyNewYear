@@ -1,0 +1,300 @@
+/* 基本样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff4d4d, #ff9966, #ffcc66);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 背景装饰 */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.3"/></svg>');
+    background-size: 50px 50px;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 倒计时样式 */
+.countdown {
+    margin: 50px 0;
+    color: white;
+}
+
+.countdown h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.timer-item {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 100px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.timer-item span {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.timer-item p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/* 新年祝福样式 */
+.greeting {
+    margin: 60px 0;
+    color: white;
+}
+
+.greeting h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    animation: bounce 1s ease-in-out infinite alternate;
+}
+
+.greeting p {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.greeting .subtitle {
+    font-size: 2rem;
+    font-style: italic;
+    margin-top: 20px;
+    color: #ffd700;
+    animation: glow-gold 2s ease-in-out infinite alternate;
+}
+
+/* 愿望墙样式 */
+.wishes {
+    margin: 80px 0;
+}
+
+.wishes h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.wish-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.wish-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    width: 200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.wish-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.wish-card p {
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 烟花动画 */
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff4d4d;
+    animation: explode 3s ease-in-out infinite;
+}
+
+#firework1 {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+#firework2 {
+    top: 30%;
+    right: 25%;
+    animation-delay: 1s;
+    background: #4d79ff;
+}
+
+#firework3 {
+    bottom: 30%;
+    left: 30%;
+    animation-delay: 2s;
+    background: #ff66cc;
+}
+
+/* 雪花动画 */
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.snowflake {
+    position: absolute;
+    color: white;
+    font-size: 1em;
+    animation: fall linear infinite;
+}
+
+/* 动画定义 */
+@keyframes glow {
+    from { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d; }
+    to { text-shadow: 0 0 20px #fff, 0 0 30px #ff6666, 0 0 40px #ff6666, 0 0 50px #ff6666; }
+}
+
+@keyframes glow-gold {
+    from { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffd700, 0 0 40px #ffd700; }
+    to { text-shadow: 0 0 20px #fff, 0 0 30px #ffed4e, 0 0 40px #ffed4e, 0 0 50px #ffed4e; }
+}
+
+@keyframes bounce {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-10px); }
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(3);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .countdown h2 {
+        font-size: 1.8rem;
+    }
+    
+    .timer-item {
+        padding: 15px;
+        min-width: 80px;
+    }
+    
+    .timer-item span {
+        font-size: 2rem;
+    }
+    
+    .greeting h1 {
+        font-size: 2.5rem;
+    }
+    
+    .greeting p {
+        font-size: 1.2rem;
+    }
+    
+    .greeting .subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .wish-cards {
+        gap: 20px;
+    }
+    
+    .wish-card {
+        width: 150px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-timer {
+        gap: 15px;
+    }
+    
+    .timer-item {
+        min-width: 70px;
+        padding: 10px;
+    }
+    
+    .timer-item span {
+        font-size: 1.5rem;
+    }
+    
+    .timer-item p {
+        font-size: 1rem;
+    }
+    
+    .greeting h1 {
+        font-size: 2rem;
+    }
+    
+    .wish-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
